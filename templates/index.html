@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask MongoDB Example</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to Flask with MongoDB</h1>
+    <form method="POST" action="/add">
+        <label for="name">Enter Name:</label>
+        <input type="text" name="name" id="name" required>
+        <button type="submit">Add</button>
+    </form>
+    <h2>Stored Data:</h2>
+    <ul>
+        {% for item in data %}
+            <li>{{ item['name'] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
